@@ -2,7 +2,7 @@ import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected LocalDate birthDate;
     protected List<String> vaccination;
@@ -68,25 +68,20 @@ public class Animal {
         System.out.printf("%s %s sleep \n",type,name);
     }
 
-    protected void fly() {
-        System.out.printf("%s %s can fly and flying \n",type,name);
-    }
-    protected void toGo(){
-        System.out.printf("%s %s going \n",type,name);
-    }
-    protected void swim(){
-        System.out.printf("%s %s Swimming \n",type,name);
-    }
+//    protected void fly() {
+//        System.out.printf("%s %s can fly and flying \n",type,name);
+//    }
+//    protected void toGo(){
+//        System.out.printf("%s %s going \n",type,name);
+//    }
+//    protected void swim(){
+//        System.out.printf("%s %s Swimming \n",type,name);
+//    }
 
-    public void lifeCircle() {
-        animalWakeUp();
-        animalEat();
-        animalPlay();
-        animalSleep();
-    }
-    public void additionalAbilities(){
-        fly();
-        toGo();
-        swim();
-    }
+    public abstract void lifeCircle();
+//    public void additionalAbilities(){
+//        fly();
+//        toGo();
+//        swim();
+//    }
 }

@@ -9,7 +9,7 @@ public class Monkey extends Animal{
     }
 
     @Override
-    protected void fly() {
-        System.out.printf("%s %s cant fly \n",type,name);
+    public void lifeCircle() {
+        System.out.println("dsgfjdsgjf");
     }
 }
