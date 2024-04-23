@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Cat extends Animal implements Goable,Swimble,Flyble{
+public class Cat extends Animal implements Goable,Swimble{
     private int legsCount;
 
     public Cat(String name, LocalDate birthDate, List<String> vaccination, String illness, String ownerName, int legsCount) {
@@ -20,12 +20,6 @@ public class Cat extends Animal implements Goable,Swimble,Flyble{
         System.out.println("Sdsadwad");
     }
 
-
-    @Override
-    public double fly() {
-        System.out.printf("%s %s cant flying",type,name);
-        return 0;
-    }
 
     @Override
     public double run() {

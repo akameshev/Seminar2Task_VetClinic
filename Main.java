@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
@@ -54,6 +55,14 @@ public class Main {
                 new ArrayList<String>(),
                 "Fish flu",
                 "Cathrine Forman");
+        Duck kryakva = new Duck("Kryakva",
+                LocalDate.of(
+                        2023,
+                        1,
+                        14),
+                new ArrayList<>(),
+                "Bird Flu",
+                "Sebastian Schwanshtaiger");
 
         List<Animal> animalList = new ArrayList<>();
         animalList.add(boris);
@@ -61,19 +70,29 @@ public class Main {
         animalList.add(josef);
         animalList.add(michael);
         animalList.add(yusuf);
-        //System.out.println(animalList.toString());
-        System.out.println("Картотека животных");
-        System.out.println("          Имя           Дата рождения        паспорт вакцинации        Болезнь          Хозяин");
-        for (int i = 0; i < animalList.size(); i++) {
-            System.out.println(animalList.get(i));
-        }
-        System.out.println(josef.fly());
-        VetClinic clinic = new VetClinic();
-        clinic.addPatients(boris,sosiska,josef,michael,yusuf);
-        System.out.println(clinic.getPatients());
-        System.out.println(clinic.getGoables());
+        animalList.add(kryakva);
 
+        VetClinic vetClinic01 = new VetClinic();
+        vetClinic01.staff = new HashMap<>();
 
+        Doctor johnson = new Doctor("Therapist",1,"Steven Johnson");
+        Doctor miles = new Doctor("Veterinarian",2,"Meredith Miles");
+        Nurse marks = new Nurse("Paramedic",3,"Cathrine Marks",johnson);
+        Nurse howland = new Nurse("Nurse",3,"Sarah Howland",miles);
+
+        vetClinic01.addStaff(johnson,marks);
+        vetClinic01.addStaff(miles,howland);
+
+        vetClinic01.doctorsAppointment = new HashMap<>();
+
+        System.out.println("Reception schedule");
+
+        vetClinic01.addAppointment(boris,johnson);
+        vetClinic01.addAppointment(sosiska,johnson);
+        vetClinic01.addAppointment(josef,johnson);
+        vetClinic01.addAppointment(yusuf,miles);
+        vetClinic01.addAppointment(kryakva,miles);
+        vetClinic01.showAppointment();
 
 
     }
